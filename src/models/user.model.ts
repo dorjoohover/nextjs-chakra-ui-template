@@ -5,27 +5,7 @@ import {
   UserStatus,
   UserType,
 } from "@/config/enum";
-export interface ContentDetailModel {
-  type: ContentTypes;
 
-  content?: string;
-
-  title?: string;
-}
-export interface SurveyDetailModel {
-  type: TextBoxTypes;
-  // index start 1
-
-  id: number;
-
-  content?: ContentDetailModel[];
-
-  question?: string;
-
-  list?: ContentDetailModel[];
-  required: boolean;
-  answer?: string;
-}
 
 export interface UserModel {
   _id?: string;
@@ -42,7 +22,7 @@ export interface UserModel {
   point: number;
   birthday?: string;
   bookmarks: number[];
-  agentAddition: AgentAdditionMoel;
+  agentAddition: AgentAdditionModel;
   organizationAddition: OrganizationAdditionModel;
   pointHistory: PointHistory[];
   code: string;
@@ -50,9 +30,8 @@ export interface UserModel {
   message: string;
 }
 
-export class UserLocation {
+export interface UserLocationModel {
   lat: string;
-
   lng: string;
 }
 
@@ -65,7 +44,7 @@ export interface AgentAdditionModel {
 
   identityCardBack?: string;
 
-  location?: UserLocation;
+  location?: UserLocationModel;
 
   firstName?: string;
 
@@ -78,7 +57,7 @@ export interface OrganizationAdditionModel {
 
   organizationCertificationCopy: string;
 
-  location: UserLocation;
+  location: UserLocationModel;
 
   organizationRegisterNumber: string;
 }

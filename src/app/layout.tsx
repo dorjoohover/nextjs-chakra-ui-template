@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { logoMiniWhite } from "@/utils/assets";
 
-import StoreProvider from "./providers";
+import StoreProvider from "./_providers";
 
 export const metadata: Metadata = {
   title: {
